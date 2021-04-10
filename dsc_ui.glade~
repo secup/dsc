@@ -14,7 +14,10 @@
       <placeholder/>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkEntry">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+      </object>
     </child>
   </object>
 </interface>
