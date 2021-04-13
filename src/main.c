@@ -1,6 +1,9 @@
 #include <stdio.h>
 
+#include <gcrypt.h>
 #include <gtk/gtk.h>
+
+#include "utils.c"
 
 int main(int argc, char* argv[]) {
 	
@@ -24,6 +27,8 @@ int main(int argc, char* argv[]) {
 	/* Connect signal handlers to the constructed widgets. */
 	window = gtk_builder_get_object (builder, "appWindow");
 	g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
+
+    gcrypt_init();
 
 	// Check if we have a key already present.
 
