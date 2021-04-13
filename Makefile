@@ -5,7 +5,7 @@ BUILD_DIR := ./build
 SRC_DIRS := ./src
 
 CFLAGS := -g -Wall -Wextra `pkg-config --cflags gtk+-3.0`
-LDFLAGS := `pkg-config --libs gtk+-3.0`
+LDFLAGS := -lgcrypt `pkg-config --libs gtk+-3.0`
 
 # Find all the C and C++ files we want to compile
 SRCS := $(shell find $(SRC_DIRS) -name *.cpp -or -name *.c)

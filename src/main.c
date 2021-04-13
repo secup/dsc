@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 #include <gcrypt.h>
 #include <gtk/gtk.h>
 
-#include "utils.c"
+#include "utils.h"
 
 int main(int argc, char* argv[]) {
 	

@@ -1,8 +1,8 @@
-#ifndef __UTILS__
-#define __UTILS__
-
+#include <stdio.h>
 #include <gtk/gtk.h>
 #include <gcrypt.h>
+
+#include "utils.h"
 
 void gcrypt_init() {
 
@@ -10,7 +10,7 @@ void gcrypt_init() {
        makes sure that important subsystems are intialized. */
     if (!gcry_check_version (GCRYPT_VERSION))
     {
-        xerr("gcrypt: library version mismatch");
+        fprintf(stderr, "gcrypt: library version mismatch");
     }
 
     gcry_error_t err = 0;
@@ -38,7 +38,6 @@ void gcrypt_init() {
     err |= gcry_control (GCRYCTL_INITIALIZATION_FINISHED, 0);
 
     if (err) {
-        xerr("gcrypt: failed initialization");
+        fprintf(stderr, "gcrypt: failed initialization");
     }
 }
-#endif
