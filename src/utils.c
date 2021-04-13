@@ -41,3 +41,11 @@ void gcrypt_init() {
         fprintf(stderr, "gcrypt: failed initialization");
     }
 }
+
+void progress_handler (void *cb_data, const char *what,
+        int printchar, int current, int total)
+{
+    // Update keygen generation dialog progress bar
+    //printf(".");
+    //printf("%c", printchar);
+}
